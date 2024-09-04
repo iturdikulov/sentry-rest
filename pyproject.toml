@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "sentry-rest"
+version = "0.0.3"
+description = ""
+authors = ["Inom Turdikulov <inom@iturdikulov.com>"]
+readme = "README.md"
+license = "MIT"
+packages = [
+  { include = "sentry_rest" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+aiohttp = "^3.9"
+backoff = "^2.0"
+
+[tool.poetry.group.test.dependencies]
+pytest  = "^8.3.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest  = "^8.3.2"
+
+[tool.poetry.scripts]
+script_name = "your_package.a_file:a_method"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.basedpyright]
+# many settings are not enabled even in strict mode, which is why basedpyright
+# includes an "all" option you can then decide which rules you want to disable
+typeCheckingMode = "strict"
