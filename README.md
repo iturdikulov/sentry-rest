@@ -1,6 +1,12 @@
 Initial version of the sentry rest API client, with reporting generation.
 This software is not production ready, and may greatly change in the future.
 
+## Installing
+
+sentry-rest is available on PyPI, officially supports Python 3.10+:
+
+`$ python -m pip install sentry-rest`
+
 ## Usage examples
 
 First you need to get auth token, organization and project name.
