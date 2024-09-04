@@ -9,12 +9,13 @@ To get auth token check this documentation:
 [Auth Tokens](https://docs.sentry.io/account/auth-tokens/#user-auth-tokens).
 Don't forget to allow at least read access for `Issues & Events`.
 
-organization and project name you can find in sentry UI.
-
+Organization and project name you can find in sentry UI.
 `https://<your_organization>.sentry.io/projects/` - here you can find required
 project.
 
-```
+More information about sentry API: [API Reference](https://docs.sentry.io/api/).
+
+```bash
 export SENTRY_AUTH_TOKEN=...
 export SENTRY_ORGANIZATION=my_org
 export SENTRY_PROJECT=my_project
@@ -43,8 +44,6 @@ print([event["id"] for event in asyncio.run(sentry_client.extract())])
 More [complex example](./examples/proxy_errors.py), with grouping by proxy IP
 and time range aviable in `examples` directory. But it can not work for you,
 because it's relays on specific messages format.
-
-TODO: add more examples, which may work everywhere.
 
 My main usage (current one) of this package is to generate reports for groups of
 specific errors, here is an example how to use it to group proxy-related issues
