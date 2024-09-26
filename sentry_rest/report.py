@@ -1,12 +1,12 @@
 import re
 from datetime import datetime
-from typing import Any, Dict, Generator
+from typing import Any, Generator
 
 
 class EventErrorsReport:
     """Group sentry issues by specific search pattern"""
 
-    def __init__(self, events: list[Dict[str, Any]]):
+    def __init__(self, events: list[dict[str, Any]]):
         self.events = events
 
     def extract_val_by_pattern(self, pattern: str, message: str) -> str | None:
@@ -22,9 +22,7 @@ class EventErrorsReport:
 
             # Group only if we found a match
             if groupping_value:
-                event_timestamp = datetime.fromisoformat(
-                    event["dateCreated"]
-                )
+                event_timestamp = datetime.fromisoformat(event["dateCreated"])
                 event["dateCreatedObject"] = event_timestamp.strftime("%Y-%m-%d")
                 event["dateCreatedTime"] = event_timestamp.strftime("%H:%M:%S")
                 event["eventCreatedTimestamp"] = event_timestamp

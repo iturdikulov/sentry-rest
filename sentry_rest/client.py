@@ -1,7 +1,7 @@
 import asyncio
 import logging
 from types import SimpleNamespace
-from typing import Dict, Any
+from typing import Any
 from urllib.parse import quote_plus
 
 from aiohttp import (
@@ -68,9 +68,9 @@ class SentryClient:
     )
     async def extract_endpoint_data(
         self, session: ClientSession, endpoint_url: str
-    ) -> list[Dict[str, Any]]:
+    ) -> list[dict[str, Any]]:
         """Extract all paginated data from a specific endpoint"""
-        items: list[Dict[str, Any]] = []
+        items: list[dict[str, Any]] = []
         while True:
             async with session.get(endpoint_url) as resp:
                 resp.raise_for_status()
