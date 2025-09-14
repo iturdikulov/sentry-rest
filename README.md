@@ -155,6 +155,10 @@ now focused on `Issues & Events` API.
 - aiohttp
 - backoff
 
+## Contributing
+
+If you'd like to contribute, please fork the repository and open a pull request to the `main` branch.
+
 ## To-do
 
 - [ ] verify and fix types
